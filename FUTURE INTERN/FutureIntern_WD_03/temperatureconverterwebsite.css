@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+@font-face {
+    font-family: 'Algerian';
+    src: url('path/to/algerian-font.woff') format('woff'); 
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Full viewport height */
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.container {
+    max-width: 400px;
+    width: 90%; /* Responsive width */
+    padding: 20px;
+    background: white;
+    border-radius: 12px; /* Slightly rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center text */
+}
+
+h1 {
+    font-family: 'Algerian', serif; /* Use Algerian font */
+    font-size: 2em; /* Increase font size */
+    color: #4CAF50; 
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+input, select, button {
+    width: 100%;
+    padding: 12px; /* Increased padding */
+    margin: 10px 0;
+    border: 2px solid #ccc; /* Thicker border */
+    border-radius: 6px; /* Rounded corners */
+    font-size: 1em; /* Responsive font size */
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold; /* Make button text bold */
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#resultArea {
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif; 
+    font-size: 1.4em; /* Slightly larger font size for better visibility */
+    font-weight: 600; /* Semi-bold for emphasis */
+    text-align: center;
+    color: #333; /* Darker color for better contrast */
+}
+
+#temperatureValue {
+    margin-bottom: 5px; /* Space between temperature and unit */
+}
