@@ -1,33 +1,35 @@
 document.getElementById('convertButton').addEventListener('click', function() {
     const temperatureInput = parseFloat(document.getElementById('temperatureInput').value);
     const unitInput = document.getElementById('unitInput').value;
-    const resultAreaValue = document.getElementById('temperatureValue');
-    const resultAreaUnit = document.getElementById('temperatureUnit');
+    const resultValue = document.getElementById('temperatureValue');
+    const resultUnit = document.getElementById('temperatureUnit');
 
     if (isNaN(temperatureInput)) {
-        resultAreaValue.textContent = "Please enter a valid number.";
-        resultAreaUnit.textContent = ""; // Clear the unit
+        resultValue.textContent = "Please enter a valid value.";
+        resultUnit.textContent = ""; // Clear the unit
         return;
     }
 
     let convertedTemperature;
     let targetUnit;
-    let kelvin;
+    let z;
 
     if (unitInput === "Celsius") {
         convertedTemperature = (temperatureInput * 9/5) + 32; // Celsius to Fahrenheit
         targetUnit = "°F";
-        kelvin = temperatureInput + 273.15; // Celsius to Kelvin
+        z = temperatureInput + 273.15; // Celsius to Kelvin
     } else if (unitInput === "Fahrenheit") {
         convertedTemperature = (temperatureInput - 32) * 5/9; // Fahrenheit to Celsius
         targetUnit = "°C";
-        kelvin = convertedTemperature + 273.15; // Celsius to Kelvin
+        z = convertedTemperature + 273.15; // Converted temperature to Kelvin
     } else if (unitInput === "Kelvin") {
         convertedTemperature = temperatureInput - 273.15; // Kelvin to Celsius
         targetUnit = "°C";
-        kelvin = (convertedTemperature * 9/5) + 32; // Celsius to Fahrenheit
+        convertedTemperature = (convertedTemperature * 9/5) + 32; // Celsius to Fahrenheit
+        z = temperatureInput; // Kelvin stays the same
+        targetUnit = "°F"; // Set to Fahrenheit for the output
     }
 
-    resultAreaValue.textContent = `Converted Temperature: ${convertedTemperature.toFixed(2)}${targetUnit}`;
-    resultAreaUnit.textContent = `(or ${kelvin.toFixed(2)} K)`;
+    resultValue.textContent = `Converted Temperature: ${convertedTemperature.toFixed(2)} ${targetUnit}`;
+    resultUnit.textContent = `(or ${z.toFixed(2)} K)`;
 });
